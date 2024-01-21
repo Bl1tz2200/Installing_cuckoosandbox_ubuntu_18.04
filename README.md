@@ -7,9 +7,9 @@ Be sure that you have ubuntu 18.04. On other versions my instructions wouldn't w
 
 # Starting
 I will use virtualbox by the way of virtualization. <br>
-Install linked file, then change internet interface inside it in 2 lines in the end of file then run it:<br>
+Install linked file and run it:<br>
 <br>
-$ sudo -u *enter your user name* ./cuckoo_installer *enter your internet interface*<br>
+$ sudo -u *enter your user name* ./cuckoo_installer.txt *enter your internet interface*<br>
 <br>
 After that you need to wait. By default it will install win7 virtual machine.<br>
 When code stopped and you see line:<br>
@@ -77,17 +77,17 @@ Don't close the window<br>
 It will create cuckoo api on localhost:8090 by default. To find your api token check ~/.cuckoo/conf/cuckoo.conf<br>
 <br>
 # How to run it after suspend<br>
-Well, you need to open at least 3 terminal windows.<br>
-In first window to give access run:<br>
+Well, you need to open at least 3 terminal windows:<br>
+First window to give access, run:<br>
 <br>
-$ sudo -u *enter your user name* ./cuckoo_installer *enter your internet interface*<br>
+$ sudo cuckoo rooter --sudo --group *your username group*
 <br>
-In second window to start cuckoo run:<br>
+Second window to start cuckoo, run:<br>
 <br>
 $ sudo vmcloak-vboxnet0<br>
 $ sudo cuckoo<br>
 <br>
-And in the third window to start web interface run:<br>
+And the third window to start web interface, run:<br>
 <br>
 $ sudo cuckoo web --host 127.0.0.1 --port 8080<br>
 <br>
