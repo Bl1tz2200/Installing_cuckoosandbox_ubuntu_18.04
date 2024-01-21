@@ -80,7 +80,7 @@ It will create cuckoo api on localhost:8090 by default. To find your api token c
 Well, you need to open at least 3 terminal windows:<br>
 First window to give access, run:<br>
 <br>
-$ sudo cuckoo rooter --sudo --group *your username group*
+$ sudo cuckoo rooter --sudo --group *your username group*<br>
 <br>
 Second window to start cuckoo, run:<br>
 <br>
