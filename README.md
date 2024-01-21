@@ -96,7 +96,8 @@ Or if you need api run:<br>
 $ sudo cuckoo api<br>
 <br>
 # What after
-If you didn't catch an error and opened the cuckoo web interface on your localhost:8080 you can use cuckoo sandbox to check file but it can make mistakes and don't see some stealthy viruses. To make you cuckoo sandbox more effective you should install some additions like moloch, suricata, volatility and other.<br>
+If you didn't catch an error and opened the cuckoo web interface on your localhost:8080 you can use cuckoo sandbox to check file but it can make mistakes and don't see some stealthy viruses.<br>
+To make your cuckoo sandbox more effective you should install some additions like moloch, suricata, volatility and other.<br>
 
 
 
