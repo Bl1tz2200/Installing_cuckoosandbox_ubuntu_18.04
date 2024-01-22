@@ -21,7 +21,8 @@ The cuckoo has been succesfull installed but we need to do some more things to r
 <br>
 # Next step
 After upper chapter open new terminal window and go to ~/.cuckoo/conf.<br>
-Then open file: routing.conf and change <br>
+Then open file: routing.conf and change: <br>
+<br>
 internet = none<br>
 to<br>
 internet = *your internet interface*<br>
