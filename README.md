@@ -30,7 +30,7 @@ internet = *your internet interface*<br>
 It will give cuckoo more access and accuracy<br>
 Save and exit<br>
 <br>
-Then open last file: reporting.conf<br>
+Then open reporting.conf<br>
 Change state for \[mongodb\] from no to yes<br>
 <br>
 from<br>
