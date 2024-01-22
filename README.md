@@ -21,25 +21,7 @@ The cuckoo has been succesfull installed but we need to do some more things to r
 <br>
 # Next step
 After upper chapter open new terminal window and go to ~/.cuckoo/conf.<br>
-Find virtualbox.conf and change:<br>
-<br>
-machines = cuckoo1<br>
-to<br>
-machines = 192.168.56.1011<br>
-<br>
-In lines down change all cuckoo1 names to 192.168.56.1011. (If you already have \[192.168.56.1011\] down then just delete label \[cuckoo1\] and all between \[cuckoo1\] and \[192.168.56.1011\])<br>
-<br>
-Then find<br>
-resultserver_ip =<br>
-And add <br>
-resultserver_ip = 192.168.56.1<br>
-<br>
-Make the same work with resultserver_port but add 0:<br>
-resultserver_port = 0<br>
-<br>
-Save and exit<br>
-<br>
-Then open next file: routing.conf and change <br>
+Then open file: routing.conf and change <br>
 internet = none<br>
 to<br>
 internet = *your internet interface*<br>
