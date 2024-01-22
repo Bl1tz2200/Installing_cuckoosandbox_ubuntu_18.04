@@ -90,7 +90,8 @@ vmcloak list vms
 cuckoo init
 cuckoo community
 
-echo $(vmcloak list vms) | while read -r vm ip; do cuckoo machine --add $vm $ip; done
+cuckoo machine --delete cuckoo1
+echo $(vmcloak list vms) | while read -r vm ip; do cuckoo machine --add $vm $ip --platform windows --snapshot vmcloak; done
 
 sudo sysctl -w net.ipv4.conf.vboxnet0.forwarding=1
 sudo sysctl -w net.ipv4.conf.$1.forwarding=1
