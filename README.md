@@ -70,9 +70,9 @@ To do this you should run vmcloak clone command to make new image of VM:<br>
 <br>
 $ sudo vmcloak clone win7x64cuckoo win7x64cuckoo_configured<br>
 <br>
-By next step you will need to configure it by vmcloak:
+By next step you will need to configure it by vmcloak:<br>
 <br>
-$ sudo vmcloak modify --vm-visible --vrde win7x64cuckoo_configured
+$ sudo vmcloak modify --vm-visible --vrde win7x64cuckoo_configured<br>
 <br>
 It will open your VM in new window that you will need to configure<br>
 How to know what i need to configure?<br>
@@ -86,7 +86,7 @@ Restart your ubuntu computer<br>
 After restarting run command to make a snapshot of our VM:<br>
 <br>
 $ sudo vmcloak snapshot win7x64cuckoo_configured win7x64cuckoo_configured 192.168.56.102
-#You can choose any ip address between 192.168.56.102 - 192.168.56.255 (just be sure that ip is free)
+#You can choose any ip address between 192.168.56.102 - 192.168.56.255 (just be sure that ip is free)<br>
 <br>
 After that you should add our new snapshot to cuckoo (remember about chosen ip address):<br>
 <br>
