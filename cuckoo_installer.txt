@@ -1,5 +1,6 @@
 cd ~
 
+#Installing all needed dependencies
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt-get install python python-pip python-dev libffi-dev libssl-dev -y
@@ -10,9 +11,10 @@ sudo apt-get install postgresql libpq-dev -y
 sudo apt install virtualbox -y
 sudo apt-get install tcpdump apparmor-utils -y
 
-
+#Making cuckoo user
 sudo adduser --disabled-password --gecos "" cuckoo
 
+#Give cuckoo exec permission
 sudo groupadd pcap
 sudo usermod -a -G pcap cuckoo
 sudo chgrp pcap /usr/sbin/tcpdump
@@ -21,11 +23,14 @@ sudo setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
 getcap /usr/sbin/tcpdump
 sudo aa-disable /usr/sbin/tcpdump
 
+#Instaling needed libraries
 sudo apt-get install swig
 sudo pip install m2crypto
 
+#Give cuckoo permission to VMBox
 sudo usermod -a -G vboxusers cuckoo
 
+#Making cuckoo autosetup shell file
 sudo cat "#!/usr/bin/env bash
 
 sudo apt-get update && sudo apt-get -y install virtualenv
@@ -54,17 +59,22 @@ sudo -u $USER cuckoo-setup-virtualenv.sh
 
 source ~/.bashrc
 
+#Making venv
 mkvirtualenv -p python2.7 cuckoo-test
 
+#Second installing needed libraries
 pip install -U pip setuptools
 pip install -U cuckoo
 
+#Installing of Win7 iso
 sudo wget https://archive.org/download/win7-ult-sp1-english/Win7_Ult_SP1_English_x64.iso
 
+#Mounting iso for vmcloak
 sudo mkdir /mnt/win7
 sudo chown cuckoo:cuckoo /mnt/win7/
 sudo mount -o ro,loop Win7_Ult_SP1_English_x64.iso /mnt/win7
 
+#Third installing needed libraries
 sudo apt-get -y install build-essential libssl-dev libffi-dev python-dev genisoimage
 sudo apt-get -y install zlib1g-dev libjpeg-dev
 sudo apt-get -y install python-pip python-virtualenv python-setuptools swig
@@ -73,26 +83,37 @@ pip install cryptography==3.3
 
 pip install -U vmcloak
 
+#Creating network
 vmcloak-vboxnet0
 
+#Creating VM image
 vmcloak init --verbose --win7x64 win7x64base --cpus 2 --ramsize 2048
 
+#Clone VM image to have base image in backup
 vmcloak clone win7x64base win7x64cuckoo
 
+#Echo list of deployments that we can use
 vmcloak list deps
 
+#Installing ie11 deployment to cuckoo
 vmcloak install win7x64cuckoo ie11
 
+#Making a snapshot of out VM
 vmcloak snapshot --count 1 win7x64cuckoo 192.168.56.101
 
+#Echo our vms to check that it is there
 vmcloak list vms
 
+#Cuckoo initialization
 cuckoo init
 cuckoo community
 
+#Removing test VM
 cuckoo machine --delete cuckoo1
+#Adding our VM to cuckoo
 echo $(vmcloak list vms) | while read -r vm ip; do cuckoo machine --add $vm $ip --platform windows --snapshot vmcloak; done
 
+#Configuring iptables and ipv4conf to have internet in our cuckoo VM
 sudo sysctl -w net.ipv4.conf.vboxnet0.forwarding=1
 sudo sysctl -w net.ipv4.conf.$1.forwarding=1
 
