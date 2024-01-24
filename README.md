@@ -9,7 +9,7 @@ Be sure that you have ubuntu 18.04. On other versions my instructions wouldn't w
 I will use virtualbox by the way of virtualization. <br>
 Install linked file and run it:<br>
 <br>
-$ sudo -u *enter_your_user_name* ./cuckoo_installer.txt *enter_your_internet _nterface*<br>
+$ sudo -u *enter_your_user_name* ./cuckoo_installer.txt *enter_your_internet _interface*<br>
 <br>
 After that you need to wait. By default it will install win7 virtual machine.<br>
 After that we can say that cuckoo has been succesfull installed but we need to do some more things to run it.<br>
