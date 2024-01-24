@@ -100,5 +100,3 @@ sudo iptables -t nat -A POSTROUTING -o $1 -s 192.168.56.0/24 -j MASQUERADE
 sudo iptables -P FORWARD DROP
 sudo iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 sudo iptables -A FORWARD -s 192.168.56.0/24 -j ACCEPT
-
-cuckoo rooter --sudo --group $USER
