@@ -75,8 +75,7 @@ By next step you will need to configure it by vmcloak:<br>
 $ sudo vmcloak modify --vm-visible --vrde win7x64cuckoo_configured<br>
 <br>
 It will open your VM in new window that you will need to configure<br>
-How to know what i need to configure?<br>
-- Easy<br>
+How to know what i need to configure? Easy<br>
 You should run your cuckoo web interface, than check safe file or link.<br>
 After that you should check the report: find where is the unnecessary information<br>
 Than just google how to disable it<br>
@@ -85,7 +84,7 @@ After configurating the VM close VMBox window and stop vmcloak modify process in
 Restart your ubuntu computer<br>
 After restarting run command to make a snapshot of our VM:<br>
 <br>
-$ sudo vmcloak snapshot win7x64cuckoo_configured win7x64cuckoo_configured 192.168.56.102
+$ sudo vmcloak snapshot win7x64cuckoo_configured win7x64cuckoo_configured 192.168.56.102<br>
 #You can choose any ip address between 192.168.56.102 - 192.168.56.255 (just be sure that ip is free)<br>
 <br>
 After that you should add our new snapshot to cuckoo (remember about chosen ip address):<br>
