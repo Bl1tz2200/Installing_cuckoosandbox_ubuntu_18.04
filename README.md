@@ -77,11 +77,13 @@ $ sudo vmcloak modify --vm-visible --vrde win7x64cuckoo_configured<br>
 It will open your VM in new window that you will need to configure<br>
 How to know what i need to configure? Easy<br>
 You should run your cuckoo web interface, than check safe file or link.<br>
+<br>
 After that you should check the report: find where is the unnecessary information<br>
 Than just google how to disable it<br>
 <br>
 After configurating the VM close VMBox window and stop vmcloak modify process in terminal by ^C<br>
 Restart your ubuntu computer<br>
+<br>
 After restarting run command to make a snapshot of our VM:<br>
 <br>
 $ sudo vmcloak snapshot win7x64cuckoo_configured win7x64cuckoo_configured 192.168.56.102<br>
