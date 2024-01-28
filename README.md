@@ -14,28 +14,6 @@ $ sudo -u *enter_your_user_name* ./cuckoo_installer.txt *enter_your_internet _in
 After that you need to wait. By default it will install win7 virtual machine.<br>
 After that we can say that cuckoo has been succesfull installed but we need to do some more things to run it.<br>
 <br>
-# Next step
-After upper chapter open new terminal window and go to ~/.cuckoo/conf.<br>
-Then open file: routing.conf and change: <br>
-<br>
-internet = none<br>
-to<br>
-internet = *your internet interface*<br>
-<br>
-It will give cuckoo more access and accuracy<br>
-Save and exit<br>
-<br>
-Then open reporting.conf<br>
-Change state for \[mongodb\] from no to yes<br>
-<br>
-from<br>
-enabled = no<br>
-to<br>
-enabled = yes<br>
-<br>
-Save and exit<br>
-(If your cuckoo don't see mongodb be sure, that you have started it (sudo systemctl start mongodb))
-<br>
 # Starting
 Run rooter command to give cuckoo access:
 <br>
@@ -52,6 +30,8 @@ If you have done all right it won't give an error. Don't close the window<br>
 Open the third window and run:<br>
 <br>
 $ sudo cuckoo web --host 127.0.0.1 --port 8080<br>
+<br>
+(If your cuckoo don't see mongodb be sure, that you have started it (sudo systemctl start mongodb))<br>
 <br>
 It will give you access to cuckoo from web interface. Don't close the window<br>
 <br>
