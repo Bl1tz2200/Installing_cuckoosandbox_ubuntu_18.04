@@ -121,3 +121,12 @@ sudo iptables -t nat -A POSTROUTING -o $1 -s 192.168.56.0/24 -j MASQUERADE
 sudo iptables -P FORWARD DROP
 sudo iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 sudo iptables -A FORWARD -s 192.168.56.0/24 -j ACCEPT
+
+sudo chmod a+rwx ~/.cuckoo
+sudo chmod a+rwx ~/.cuckoo/conf
+cd ~/.cuckoo/conf
+sudo chmod a+rw ~/.cuckoo/conf/reporting.conf
+sudo touch buffer && sudo chmod a+rw buffer && sudo sed '44,46 s/enabled = no/enabled = yes/g' reporting.conf > buffer && sudo cat buffer > reporting.conf && sudo rm buffer
+sudo chmod a+rw ~/.cuckoo/conf/routing.conf
+sudo touch buffer && sudo chmod a+rw buffer && sudo sed "18,20 s/internet = none/internet = $1/g" routing.conf > buffer && sudo cat buffer > routing.conf && sudo rm buffer
+
