@@ -34,7 +34,7 @@ to<br>
 enabled = yes<br>
 <br>
 Save and exit<br>
-(If your cuckoo don't see mongodb bu sure, that you have started it (sudo systemctl start mongodb))
+(If your cuckoo don't see mongodb be sure, that you have started it (sudo systemctl start mongodb))
 <br>
 # Starting
 Run rooter command to give cuckoo access:
