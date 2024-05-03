@@ -66,7 +66,7 @@ mkvirtualenv -p python2.7 cuckoo-test
 pip install -U pip setuptools
 pip install -U cuckoo
 
-#Installing of Win7 iso
+#Installing Win7 iso
 sudo wget https://archive.org/download/win7-ult-sp1-english/Win7_Ult_SP1_English_x64.iso
 
 #Mounting iso for vmcloak
